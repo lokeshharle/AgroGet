@@ -44,6 +44,9 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
+
+
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -1447,6 +1450,10 @@ section.contact-us .right-info ul li span {
   color: #f5a425;
 }
 
+.row{
+  justify-content: center;
+}
+
 
 /*
 ---------------------------------------------
@@ -1462,6 +1469,35 @@ section.heading-page {
   padding-top: 150px;
   padding-bottom: 5px;
   text-align: center;
+}
+
+section.heading-page-login {
+  background-image: url(../images/wp3471778-john-deere-images-wallpaper.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 150px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+section.heading-page-aboutus {
+  background-image: url(../images/hannah-busing-Zyx1bK9mqmA-unsplash.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 150px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+section.heading-page-aboutus h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
 }
 
 section.heading-page h6 {
@@ -1482,6 +1518,15 @@ section.heading-page h2 {
   color: #fff;
   letter-spacing: 1px;
 }
+section.heading-page-login h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
 
 
 /*
@@ -1491,7 +1536,6 @@ upcoming meetings page
 */
 
 section.meetings-page {
-  background-image: url(../images/meetings-page-bg.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
