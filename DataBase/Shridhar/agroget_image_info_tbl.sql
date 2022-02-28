@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `agroget` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `agroget`;
 -- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
 -- Host: localhost    Database: agroget
@@ -26,15 +24,19 @@ DROP TABLE IF EXISTS `image_info_tbl`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `image_info_tbl` (
   `image_id` int NOT NULL AUTO_INCREMENT,
-  `image_type` varchar(255) DEFAULT NULL,
-  `image_reference_id` int DEFAULT NULL,
+  `farmer_id` int DEFAULT NULL,
+  `renter_id` int DEFAULT NULL,
+  `equipment_id` int DEFAULT NULL,
   `image_data` longblob,
   `image_description` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`image_id`),
-  KEY `image_reference_id` (`image_reference_id`),
-  CONSTRAINT `image_info_tbl_ibfk_1` FOREIGN KEY (`image_reference_id`) REFERENCES `farmer_info_tbl` (`farmer_id`),
-  CONSTRAINT `image_info_tbl_ibfk_2` FOREIGN KEY (`image_reference_id`) REFERENCES `equipment_info_tbl` (`equipment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `farmer_id` (`farmer_id`),
+  KEY `renter_id` (`renter_id`),
+  KEY `equipment_id` (`equipment_id`),
+  CONSTRAINT `image_info_tbl_ibfk_1` FOREIGN KEY (`farmer_id`) REFERENCES `farmer_info_tbl` (`farmer_id`),
+  CONSTRAINT `image_info_tbl_ibfk_2` FOREIGN KEY (`renter_id`) REFERENCES `renter_info_tbl` (`renter_id`),
+  CONSTRAINT `image_info_tbl_ibfk_3` FOREIGN KEY (`equipment_id`) REFERENCES `equipment_info_tbl` (`equipment_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -46,4 +48,4 @@ CREATE TABLE `image_info_tbl` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-27 23:53:35
+-- Dump completed on 2022-02-28 23:23:33

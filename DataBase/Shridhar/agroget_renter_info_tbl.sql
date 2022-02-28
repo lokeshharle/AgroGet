@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `agroget` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `agroget`;
 -- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
 -- Host: localhost    Database: agroget
@@ -34,14 +32,14 @@ CREATE TABLE `renter_info_tbl` (
   `renter_password` varchar(20) NOT NULL,
   `renter_address` varchar(100) NOT NULL,
   `renter_shop_details` varchar(100) NOT NULL,
-  `renter_shop_image_id` int NOT NULL,
+  `renter_shop_image_id` int DEFAULT NULL,
   `renter_is_approved` tinyint(1) NOT NULL,
   PRIMARY KEY (`renter_id`),
   UNIQUE KEY `renter_email` (`renter_email`),
   UNIQUE KEY `renter_mobile` (`renter_mobile`),
   KEY `renter_shop_image_id` (`renter_shop_image_id`),
   CONSTRAINT `renter_info_tbl_ibfk_1` FOREIGN KEY (`renter_shop_image_id`) REFERENCES `image_info_tbl` (`image_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +51,4 @@ CREATE TABLE `renter_info_tbl` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-27 23:53:35
+-- Dump completed on 2022-02-28 23:23:31
