@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/how-to-convert-from-blob-to-text-in-mysql/
