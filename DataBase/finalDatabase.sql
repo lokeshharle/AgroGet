@@ -102,7 +102,8 @@ CREATE TABLE `image_info_tbl` (
   PRIMARY KEY (`image_id`),
   KEY `image_reference_id` (`image_reference_id`),
   CONSTRAINT `image_info_tbl_ibfk_1` FOREIGN KEY (`image_reference_id`) REFERENCES `farmer_info_tbl` (`farmer_id`),
-  CONSTRAINT `image_info_tbl_ibfk_2` FOREIGN KEY (`image_reference_id`) REFERENCES `equipment_info_tbl` (`equipment_id`)
+  CONSTRAINT `image_info_tbl_ibfk_2` FOREIGN KEY (`image_reference_id`) REFERENCES `renter_info_tbl` (`renter_id`),
+  CONSTRAINT `image_info_tbl_ibfk_3` FOREIGN KEY (`image_reference_id`) REFERENCES `equipment_info_tbl` (`equipment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -115,7 +116,7 @@ DROP TABLE IF EXISTS `order_equipment_tbl`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_equipment_tbl` (
   `order_equipment_id` int NOT NULL AUTO_INCREMENT,
-  `orderid` int NOT NULL,
+  `order_id` int NOT NULL,
   `equipment_id` int NOT NULL,
   `from_date` date NOT NULL,
   `from_time` time DEFAULT NULL,
@@ -123,7 +124,6 @@ CREATE TABLE `order_equipment_tbl` (
   `to_time` time DEFAULT NULL,
   `order_equipment_status` tinyint(1) NOT NULL,
   `service_address` varchar(100) NOT NULL,
-  `order_id` int DEFAULT NULL,
   PRIMARY KEY (`order_equipment_id`),
   KEY `order_id` (`order_id`),
   KEY `equipment_id` (`equipment_id`),
@@ -168,7 +168,7 @@ CREATE TABLE `renter_info_tbl` (
   `renter_password` varchar(20) NOT NULL,
   `renter_address` varchar(100) NOT NULL,
   `renter_shop_details` varchar(100) NOT NULL,
-  `renter_shop_image_id` int NOT NULL,
+  `renter_shop_image_id` int DEFAULT NULL,
   `renter_is_approved` tinyint(1) NOT NULL,
   PRIMARY KEY (`renter_id`),
   UNIQUE KEY `renter_email` (`renter_email`),
