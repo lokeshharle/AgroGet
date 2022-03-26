@@ -44,6 +44,33 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
+/*Map start*/
+#templatemo-contact {
+	margin-top:100px; 
+	border-top: 1px solid #cccccc; 
+	font-size:14px;
+}
+.templatemo-contact-map {
+    margin-bottom: -20px;
+    height: 400px;
+    border-radius: 20px;
+
+}
+.head_contact {
+  padding-bottom:80px; 
+  margin-bottom:0;
+}
+
+.contact_right img {
+margin-right:5px;
+}
+
+.contact_right form {
+padding-left:15px;
+padding-right:15px
+}
+/*Map end*/
+
 
 /*Start of toggle css*/
 .switch{
