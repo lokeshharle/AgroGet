@@ -4,6 +4,9 @@
 -- ------------------------------------------------------
 -- Server version	8.0.27
 
+use test_agroget;
+
+
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -28,7 +31,7 @@ CREATE TABLE `equipment_info_tbl` (
   `equipment_type` varchar(20) NOT NULL,
   `equipment_rate_type` varchar(10) NOT NULL,
   `equipment_rate` varchar(20) NOT NULL,
-  `equipment_deacription` varchar(255) DEFAULT NULL,
+  `equipment_description` varchar(255) DEFAULT NULL,
   `equipment_status` tinyint(1) NOT NULL,
   `renter_id` int DEFAULT NULL,
   PRIMARY KEY (`equipment_id`),
