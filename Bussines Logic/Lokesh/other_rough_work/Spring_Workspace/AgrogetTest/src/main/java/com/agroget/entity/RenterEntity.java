@@ -58,4 +58,193 @@ public class RenterEntity {
 	
 	public RenterEntity() {
 	}
+	
+	
+
+	public int getRenterId() {
+		return renterId;
+	}
+
+
+
+	public void setRenterId(int renterId) {
+		this.renterId = renterId;
+	}
+
+
+
+	public String getRenterFname() {
+		return renterFname;
+	}
+
+
+
+	public void setRenterFname(String renterFname) {
+		this.renterFname = renterFname;
+	}
+
+
+
+	public String getRenterLname() {
+		return renterLname;
+	}
+
+
+
+	public void setRenterLname(String renterLname) {
+		this.renterLname = renterLname;
+	}
+
+
+
+	public String getRenterMobile() {
+		return renterMobile;
+	}
+
+
+
+	public void setRenterMobile(String renterMobile) {
+		this.renterMobile = renterMobile;
+	}
+
+
+
+	public String getRenterEmail() {
+		return renterEmail;
+	}
+
+
+
+	public void setRenterEmail(String renterEmail) {
+		this.renterEmail = renterEmail;
+	}
+
+
+
+	public String getRenterUsername() {
+		return renterUsername;
+	}
+
+
+
+	public void setRenterUsername(String renterUsername) {
+		this.renterUsername = renterUsername;
+	}
+
+
+
+	public String getRenterPassword() {
+		return renterPassword;
+	}
+
+
+
+	public void setRenterPassword(String renterPassword) {
+		this.renterPassword = renterPassword;
+	}
+
+
+
+	public String getRenterAddress() {
+		return renterAddress;
+	}
+
+
+
+	public void setRenterAddress(String renterAddress) {
+		this.renterAddress = renterAddress;
+	}
+
+
+
+	public int getRenterPincode() {
+		return renterPincode;
+	}
+
+
+
+	public void setRenterPincode(int renterPincode) {
+		this.renterPincode = renterPincode;
+	}
+
+
+
+	public String getRenterShopDetails() {
+		return renterShopDetails;
+	}
+
+
+
+	public void setRenterShopDetails(String renterShopDetails) {
+		this.renterShopDetails = renterShopDetails;
+	}
+
+
+
+	public int getRenterIsApproved() {
+		return renterIsApproved;
+	}
+
+
+
+	public void setRenterIsApproved(int renterIsApproved) {
+		this.renterIsApproved = renterIsApproved;
+	}
+
+
+
+	public List<EquipmentInfoTable> getListOfEquipments() {
+		return listOfEquipments;
+	}
+
+
+
+	public void setListOfEquipments(List<EquipmentInfoTable> listOfEquipments) {
+		this.listOfEquipments = listOfEquipments;
+	}
+
+
+
+	public List<ImageInfoTable> getImageInfoTbls() {
+		return imageInfoTbls;
+	}
+
+
+
+	public void setImageInfoTbls(List<ImageInfoTable> imageInfoTbls) {
+		this.imageInfoTbls = imageInfoTbls;
+	}
+
+
+
+	public RenterEntity(int renterId, String renterFname, String renterLname, String renterMobile, String renterEmail,
+			String renterUsername, String renterPassword, String renterAddress, int renterPincode,
+			String renterShopDetails, int renterIsApproved) {
+		super();
+		this.renterId = renterId;
+		this.renterFname = renterFname;
+		this.renterLname = renterLname;
+		this.renterMobile = renterMobile;
+		this.renterEmail = renterEmail;
+		this.renterUsername = renterUsername;
+		this.renterPassword = renterPassword;
+		this.renterAddress = renterAddress;
+		this.renterPincode = renterPincode;
+		this.renterShopDetails = renterShopDetails;
+		this.renterIsApproved = renterIsApproved;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "RenterEntity [renterId=" + renterId + ", renterFname=" + renterFname + ", renterLname=" + renterLname
+				+ ", renterMobile=" + renterMobile + ", renterEmail=" + renterEmail + ", renterUsername="
+				+ renterUsername + ", renterPassword=" + renterPassword + ", renterAddress=" + renterAddress
+				+ ", renterPincode=" + renterPincode + ", renterShopDetails=" + renterShopDetails
+				+ ", renterIsApproved=" + renterIsApproved + ", listOfEquipments=" + listOfEquipments
+				+ ", imageInfoTbls=" + imageInfoTbls + "]";
+	}
+	
+	
 }

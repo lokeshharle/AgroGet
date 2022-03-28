@@ -128,6 +128,11 @@ public class EquipmentInfoTable {
 	public void setRenter(RenterEntity renter) {
 		this.renter = renter;
 	}
+	
+	public EquipmentInfoTable()
+	{
+		
+	}
 
 	@Override
 	public String toString() {
