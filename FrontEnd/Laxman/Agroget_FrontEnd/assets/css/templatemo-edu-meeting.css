@@ -232,13 +232,14 @@ body {
 .main-button-red a {
   font-size: 13px;
   color: #fff;
-  background-color: burlywood;
+  background-color: #473e14;
   padding: 12px 30px;
   display: inline-block;
   border-radius: 22px;
   font-weight: 500;
   text-transform: uppercase;
   transition: all 0.3s;
+  align-items: center;
 }
 
 .main-button-red a:hover {
@@ -1119,8 +1120,7 @@ section.upcoming-meetings .categories .main-button-red a {
 }
 
 .meeting-item .thumb img {
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+  
 }
 
 .meeting-item .thumb .price {
@@ -1139,10 +1139,9 @@ section.upcoming-meetings .categories .main-button-red a {
 }
 
 .meeting-item .down-content {
-  background-color: #fff;
+  background-color: #8f7e36;
   padding: 30px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+  
 }
 
 .meeting-item .down-content .date {
@@ -1175,7 +1174,7 @@ section.upcoming-meetings .categories .main-button-red a {
 }
 
 .meeting-item .down-content p {
-  margin-left: 50px;
+  margin-left: 0px;
   color: #1f272b;
   font-size: 14px;
 }
