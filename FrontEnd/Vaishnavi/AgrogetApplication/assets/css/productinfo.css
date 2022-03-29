@@ -16,7 +16,7 @@
   padding-bottom: 5px;
   text-align: center;
   height: auto;
-    background-image: url("/assets/images/harvest.jfif");
+    background-image: url("/assets/images/pdbackground.jpg");
 }
 section.heading-page h6 {
     margin-top: 0px;
@@ -31,7 +31,7 @@ section.heading-page h6 {
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 36px;
-    margin-left: 500px;
+    margin-left: 520px;
     text-transform: uppercase;
     font-weight: 800;
     color: #fff;
@@ -56,4 +56,20 @@ section.heading-page h6 {
   .heighter
   {
       height: 180;
+  }
+  .linker
+  {
+      margin-left: 350px;
+  }
+  .stripdrill
+  {
+    margin-top: 33px;
+  }
+  .trilldrill
+  {
+      margin-top: -5px;
+  }
+  .air
+  {
+      margin-top: 14px;
   }
