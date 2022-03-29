@@ -1,5 +1,7 @@
 package com.agroget.entity;
 
+
+
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +24,7 @@ public class OrderInfoTable {
 	private int orderId;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name="order_date",nullable = false)
+	@Column(name="order_date",nullable = true)
 	private Date orderDate;
 
 	@Column(name="order_status",columnDefinition = "TINYINT")
@@ -32,7 +34,7 @@ public class OrderInfoTable {
 	private double orderTotalCost;
 
 	@ManyToOne
-	@JoinColumn(name="farmer_id",nullable = false)
+	@JoinColumn(name="farmer_id")
 	private FarmerEntity farmerInfoTbl;
 	
 	@OneToMany(mappedBy="orderInfoTbl")
@@ -92,15 +94,13 @@ public class OrderInfoTable {
 		this.orderEquipmentTbls = orderEquipmentTbls;
 	}
 
-	public OrderInfoTable(int orderId, Date orderDate, byte orderStatus, double orderTotalCost,
-			FarmerEntity farmerInfoTbl, List<OrderEquipmentTable> orderEquipmentTbls) {
-		super();
-		this.orderId = orderId;
+
+	public OrderInfoTable(Date orderDate, byte orderStatus, double orderTotalCost,FarmerEntity farmerEntity) {
 		this.orderDate = orderDate;
 		this.orderStatus = orderStatus;
 		this.orderTotalCost = orderTotalCost;
-		this.farmerInfoTbl = farmerInfoTbl;
-		this.orderEquipmentTbls = orderEquipmentTbls;
+		this.farmerInfoTbl = farmerEntity;
+		
 	}
 
 

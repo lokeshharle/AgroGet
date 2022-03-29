@@ -19,5 +19,13 @@ public class EquipmentDao {
 		return equipRepo.findAll();
 		
 	}
+	
+	public List<EquipmentInfoTable> findByEquipmentType(String type)
+	{
+		return equipRepo.findByEquipmentType(type);
+	}
 
+	
+	
+	
 }

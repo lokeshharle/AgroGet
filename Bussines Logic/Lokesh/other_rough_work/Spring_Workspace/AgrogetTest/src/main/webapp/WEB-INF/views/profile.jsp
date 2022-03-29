@@ -31,6 +31,13 @@
 <tr><td><%=farmerEntity.getFarmerPincode() %></td></tr>
 </table>
 
+<a href="edit">Edit</a>
+<br/>
+<a href="logout">logout</a>
+
+
+
+
 
 
 
