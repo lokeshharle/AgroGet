@@ -73,3 +73,24 @@ section.heading-page h6 {
   {
       margin-top: 14px;
   }
+  .back
+  {
+      margin-left: -900px;
+  }
+  .rip
+  {
+    margin-top: 19px;
+  }
+  a:link, a:visited {
+    background-color: green;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: wheat;
+  }
+ 
