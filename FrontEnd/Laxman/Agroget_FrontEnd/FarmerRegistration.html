@@ -34,39 +34,39 @@ https://templatemo.com/tm-569-edu-meeting
    
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                      <img src="assets/images/logo.png" class="img">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Login.html">Login</a></li>
-                        <li class="has-sub">
-                            <a href="javascript:void(0)">Registration</a>
-                            <ul class="sub-menu">
-                                <li><a href="FarmerRegistration.html">As Farmer</a></li>
-                                <li><a href="RenterRegistration.html">As Renter</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="Aboutus.html">About Us</a></li> 
-                        <li><a href="feedback.html" class="active">Feedback</a></li> 
-                        <li><a href="contact.html">ContactUs</a></li>
-                    </ul>        
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index.html" class="logo">
+                        <img src="assets/images/logo.png" class="img">
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li><a href="index.html">Home</a></li>
+                          <li><a href="Login.html">Login</a></li>
+                          <li class="has-sub">
+                              <a href="javascript:void(0)">Registration</a>
+                              <ul class="sub-menu">
+                                  <li><a href="FarmerRegistration.html" class="active">As Farmer</a></li>
+                                  <li><a href="RenterRegistration.html">As Renter</a></li>
+                              </ul>
+                          </li>
+                          <li><a href="Aboutus.html">About Us</a></li> 
+                          <li><a href="feedback.html">Feedback</a></li> 
+                          <li><a href="contact.html">ContactUs</a></li>
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
   <!-- ***** Header Area End ***** -->
 
 
@@ -75,82 +75,106 @@ https://templatemo.com/tm-569-edu-meeting
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h2>Feedback</h2>
-          <h6>We appreciate you taking the time to provide us with your views
-            so that we can best meet the needs of users</h6>
+          <h2> Farmer Registration</h2>
          
         </div>
       </div>
     </div>
   </section>
 
+
   <section class="contact-us" id="contact">
     <div class="container">
       <div class="row">
         <div class="col-lg-9 align-self-center">
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 setborder">
               <form id="contact" action="" method="post">
                 <div class="row">
-                  <div class="col-lg-12">
-                    <h2>Feedback</h2>
+                  <div class="col-lg-12 ">
+                    <h2>Enter Your Details</h2>
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
-                      <input name="name" type="text" id="name" placeholder="YOURNAME...*" required="">
+                      <input name="FirstName" type="text" id="fname" placeholder="FirstName" required="">
                     </fieldset>
                   </div>
                   <div class="col-lg-4">
                     <fieldset>
-                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
+                      <input name="LastName" type="text" id="lname" placeholder="LastName" required="">
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                    <input name="Email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email" required="">
                   </fieldset>
                   </div>
+                  
                   <div class="col-lg-4">
                     <fieldset>
-                      <input name="subject" type="text" id="subject" placeholder="SUBJECT...*" required="">
+                      <input name="Password" type="password" id="password" placeholder="Password" required="">
                     </fieldset>
                   </div>
+
+
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <input  name="Phone" type="number" id="name" placeholder="Phone" required="">
+                    </fieldset>
+                  </div>
+
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <input name="Address*" type="text" id="address" placeholder="Address" required="">
+                    </fieldset>
+                  </div>
+                  
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <input name="PinCode" type="number" id="pin" placeholder="Pincode" required="">
+                    </fieldset>
+                  </div>
+              
+                  
+                  <div class="col-lg-5">
+                    <fieldset class="height"><label for="files" class="btn">Upload Kisan Card</label>
+                      <input id="files" style="visibility:hidden;" type="file" required="">
+                    </fieldset>
+                  </div>
+                
+                
                   <div class="col-lg-12">
                     <fieldset>
-                      <textarea name="message" type="text" class="form-control" id="message" placeholder="YOUR MESSAGE..." required=""></textarea>
+                      <div>
+                      <button type="submit" id="form-submit" class="button">Register</button>
                     </fieldset>
+                    
                   </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="button">SEND MESSAGE NOW</button>
-                    </fieldset>
+                  <br>
+                  <div>
+                    <hr>
+                 <h6 style="margin-left: 340px;">Already User? <a href="Login.html"><u style="color: green;">Login here</u></a></h6>
                   </div>
+                
+            
                 </div>
               </form>
             </div>
           </div>
         </div>
-        <!-- <div class="col-lg-3">
-          <div class="right-info">
-            <ul>
-              <li>
-                <h6>Phone Number</h6>
-                <span>010-020-0340</span>
-              </li>
-              <li>
-                <h6>Email Address</h6>
-                <span>agroget@gmail.com</span>
-              </li>
-              <li>
-                <h6>Street Address</h6>
-                <span>IET, Model Colony, Pune-411016</span>
-              </li>
-              
-            </ul>
-          </div>
-        </div> -->
       </div>
-    </div>
-    <div class="footer">
-      <p>Copyright © 2022 Edu Meeting Co., Ltd. All Rights Reserved. 
-          <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
-    </div>
-  </section>
+  
+      
+        <section class="meetings-page" id="meetings">
+          <div class="footer">
+            <p>Copyright © 2022 AgroGet Co., Ltd. All Rights Reserved. 
+                <br>Design: <a href="https://templatemo.com/page/1" target="_parent" title="website templates">AgroGet</a></p>
+          </div>
+        </section>
+         ***** Main Banner Area End ***** -->
+      
+  
+
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
