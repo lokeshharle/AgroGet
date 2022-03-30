@@ -76,7 +76,7 @@ section.contact-us1 {
   section.contact-us1 #contact button {
     font-size: 13px;
     color: #fff;
-    background-color: #134639;
+    background-color: #8f7e36;
     padding: 12px 30px;
     display: inline-block;
     border-radius: 22px;
@@ -326,12 +326,12 @@ nav ul li a .cart::after {
 
 .order .btn.btn-primary {
     background-color: #fff;
-    color: #af92dd;
-    border: 1px solid #4e2296
+    color: #929426;
+    border: 1px solid #94963c
 }
 
 .order .btn.btn-primary:hover {
-    background-color: #4e2296;
+    background-color: #524e14;
     color: #fff
 }
 
