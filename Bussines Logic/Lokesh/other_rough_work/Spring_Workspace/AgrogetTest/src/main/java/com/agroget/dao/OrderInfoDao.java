@@ -1,5 +1,6 @@
 package com.agroget.dao;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,11 @@ public class OrderInfoDao {
 		Optional<OrderInfoTable> o = orderInfoRepo.findById(id);
 		OrderInfoTable oi = o.get();
 		return oi;
+	}
+	
+	public List<OrderInfoTable> findByFarmerId(int farmerId)
+	{
+		return orderInfoRepo.findByFarmerId(farmerId);
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.agroget.dao;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,11 @@ public class OrderEquipmentDao {
 	public void saveOrderEquipment(OrderEquipmentTable oe)
 	{
 		orderEquipmentRepo.save(oe);
+	}
+	
+	public List<OrderEquipmentTable> findByOrderId(int id)
+	{
+		return orderEquipmentRepo.findByOrderId(id);
 	}
 
 }

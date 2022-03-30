@@ -14,18 +14,7 @@
 </head>
 <body>
 
-	<%--  <%
-	List<EquipmentInfoTable> equipments = (List<EquipmentInfoTable>) request.getAttribute("equipments");
-	for(EquipmentInfoTable equipment : equipments )
-	{
-		%>
-			<%= equipment.getEquipment_name() %>
-			<%= equipment.getEquipment_rate() %>
-			<a href="/orderEquipment?id=<%=equipment.getEquipment_id()%>"> Order Equipment</a>
-			<br/>
-		<%
-	}
-%>  --%>
+
 <br/>
 
 <br/>

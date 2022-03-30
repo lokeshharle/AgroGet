@@ -1,5 +1,8 @@
+<%@page import="com.agroget.entity.EquipmentInfoTable"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="com.agroget.*"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +14,7 @@
 	<form action="searchme" method="post">
 	
 	 <select id="type" name="type">
+	  	<option value="none" selected disabled hidden>Select an Type</option>
   		<option value="seeding">seeding</option>
   		<option value="crop protection">crop protection</option>
   		<option value="tillage">tillage</option>

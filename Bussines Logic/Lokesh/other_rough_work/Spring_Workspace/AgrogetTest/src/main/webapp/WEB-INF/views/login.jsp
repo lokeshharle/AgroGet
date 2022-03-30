@@ -88,7 +88,7 @@ https://templatemo.com/tm-569-edu-meeting
         <div class="col-lg-6 align-self-center">
           <div class="row">
             <div class="col-lg-12 setborder">
-              <form id="contact" action="" method="post">
+              <form id="contact" action="loginFarmer" method="post">
                 <div class="row">
 
                    <!-- <div class="col-lg-6 ">
@@ -118,13 +118,13 @@ https://templatemo.com/tm-569-edu-meeting
                     
                     
                     <fieldset>
-                      <input name="Username" type="text" id="username" placeholder="Username" required="">
+                      <input name="username" type="text" id="username" placeholder="Username" required="">
                     </fieldset>
                   </div>
                   
                   <div class="col-lg-12">
                     <fieldset>
-                      <input name="PinCode" type="text" id="pin" placeholder="Password" required="">
+                      <input name="password" type="text" id="password" placeholder="Password" required="">
                     </fieldset>
                   </div>
                 

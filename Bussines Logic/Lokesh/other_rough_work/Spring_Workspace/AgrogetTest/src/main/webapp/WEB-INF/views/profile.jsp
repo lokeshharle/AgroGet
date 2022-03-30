@@ -31,8 +31,9 @@
 <tr><td><%=farmerEntity.getFarmerPincode() %></td></tr>
 </table>
 
-<a href="edit">Edit</a>
+<a href="editprofile?farmerid=<%=farmerEntity.getFarmerId() %>">Edit Profile</a>
 <br/>
+<a href="showorder?farmerid=<%=farmerEntity.getFarmerId() %>">Show Orders</a>
 <a href="logout">logout</a>
 
 

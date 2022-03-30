@@ -54,7 +54,7 @@ https://templatemo.com/tm-569-edu-meeting
                         <li class="has-sub">
                             <a href="javascript:void(0)">Registration</a> 
                             <ul class="sub-menu">
-                                <li><a href="FarmerRegistration.html">As Farmer</a></li>
+                                <li><a href="/farmerregistration">As Farmer</a></li>
                                 <li><a href="RenterRegistration.html">As Renter</a></li>
                             </ul>
                         </li>

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="addFarmer" method="post">
+<form action="addFarmer" method="post" enctype="multipart/form-data">
   
   <label for="fname">First name:</label><br>
   <input type="text" id="fname" name="fname" ><br>
@@ -32,6 +32,9 @@
   
    <label for="pincode">PinCode :</label><br>
   <input type="text" id="pincode" name="pincode" ><br><br>
+  
+   <label for="file">Insert Image :</label><br>
+  <input type="file" id="file" name="file" accept="image/png , image/jpeg" ><br><br>
   
   <input type="submit" value="Submit">
 </form> 

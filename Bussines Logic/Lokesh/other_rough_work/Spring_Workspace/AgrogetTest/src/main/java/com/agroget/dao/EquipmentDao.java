@@ -25,6 +25,10 @@ public class EquipmentDao {
 		return equipRepo.findByEquipmentType(type);
 	}
 
+	public List<EquipmentInfoTable> equipmentTypeList()
+	{
+		return equipRepo.equipmentTypeList();
+	}
 	
 	
 	
