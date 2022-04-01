@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,25 +41,26 @@ https://templatemo.com/tm-569-edu-meeting
               <div class="col-12">
                   <nav class="main-nav">
                       <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
+                      <a href="index" class="logo">
                         <img src="assets/images/logo.png" class="img">
                       </a>
                       <!-- ***** Logo End ***** -->
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="FarmerRegistration.html">Login</a></li>
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">Registration</a>
-                              <ul class="sub-menu">
-                                  <li><a href="FarmerRegistration.html">As Farmer</a></li>
-                                  <li><a href="RenterRegistration.html">As Renter</a></li>
-                              </ul>
-                          </li>
-                          <li><a href="Aboutus.html" class="active">About Us</a></li> 
-                          <li><a href="feedback.html">Feedback</a></li> 
-                          <li><a href="contact.html">Contact Us</a></li> 
-                      </ul>        
+                        <li class="scroll-to-section"><a href="index" class="active">Home</a></li>
+                        <li><a href="Login">Login</a></li>
+                        
+                        <li class="has-sub">
+                            <a href="javascript:void(0)">Registration</a> 
+                            <ul class="sub-menu">
+                                <li><a href="FarmerRegistration">As Farmer</a></li>
+                                <li><a href="RenterRegistration">As Renter</a></li>
+                            </ul>
+                        </li>
+                        <li ><a href="Aboutus">About Us</a></li>
+                        <li><a href="feedback">Feedback</a></li> 
+                        <li><a href="contact">ContactUs</a></li>
+                    </ul>         
                       <a class='menu-trigger'>
                           <span>Menu</span>
                       </a>

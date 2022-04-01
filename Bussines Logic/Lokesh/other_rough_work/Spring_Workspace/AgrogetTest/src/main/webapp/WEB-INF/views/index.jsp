@@ -1,9 +1,8 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
+<html>
+<head>
     <meta charset="utf-8">
     <meta name="View Equipmentport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -49,12 +48,12 @@ https://templatemo.com/tm-569-edu-meeting
                       <!-- ***** Menu Start ***** -->
                       <ul class="nav">
                         <li class="scroll-to-section"><a href="index.html" class="active">Home</a></li>
-                        <li><a href="login">Login</a></li>
+                        <li><a href="Login.html">Login</a></li>
                         
                         <li class="has-sub">
                             <a href="javascript:void(0)">Registration</a> 
                             <ul class="sub-menu">
-                                <li><a href="/farmerregistration">As Farmer</a></li>
+                                <li><a href="FarmerRegistration.html">As Farmer</a></li>
                                 <li><a href="RenterRegistration.html">As Renter</a></li>
                             </ul>
                         </li>
@@ -158,7 +157,12 @@ https://templatemo.com/tm-569-edu-meeting
       </div>
       
     </div>
-  
+    <section class="meetings-page" id="meetings">
+      <div class="footer">
+        <p>Copyright © 2022 AgroGet Co., Ltd. All Rights Reserved. 
+            <br>Design: <a href="https://templatemo.com/page/1" target="_parent" title="website templates">AgroGet</a></p>
+      </div>
+    </section>
 </section>
  
  

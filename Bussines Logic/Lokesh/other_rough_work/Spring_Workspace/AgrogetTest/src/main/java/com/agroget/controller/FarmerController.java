@@ -52,27 +52,24 @@ public class FarmerController {
 
 
 
-	@GetMapping("/index")
-	public String index() {
-		return "index";
-	}
+	/*
+	 * @GetMapping("/index") public String index() { return "index"; }
+	 */
 
 	@GetMapping("/home")
 	public String home() {
 		return "farmer";
 	}
 
-	@GetMapping("/login")
-	public String login() {
-		return "Login";
-	}
-
+	/*
+	 * @GetMapping("/login") public String login() { return "Login"; }
+	 */
 	@GetMapping("/home/login1")
 	public String login1() {
 		return "login1";
 	}
 	
-	@GetMapping("/farmerregistration")
+	@GetMapping("/FarmerRegistration")
 	public String farmerRegistration()
 	{
 		return "FarmerRegistration";
@@ -154,6 +151,7 @@ public class FarmerController {
 		FarmerEntity farmerEntity = farmerDao.loginFarmer("prash@gmail.com", "prash");
 		OrderInfoTable oi = new OrderInfoTable(new Date(), (byte) 1, 8888, farmerEntity);
 		orderInfoDao.saveOI(oi);
+		// query on 
 		System.out.println(oi.getOrderId());
 	}
 

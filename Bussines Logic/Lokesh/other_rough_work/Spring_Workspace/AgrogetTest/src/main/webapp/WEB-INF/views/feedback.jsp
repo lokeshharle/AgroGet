@@ -45,18 +45,18 @@ https://templatemo.com/tm-569-edu-meeting
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Login.html">Login</a></li>
+                        <li><a href="index">Home</a></li>
+                        <li><a href="Login">Login</a></li>
                         <li class="has-sub">
                             <a href="javascript:void(0)">Registration</a>
                             <ul class="sub-menu">
-                                <li><a href="FarmerRegistration.html">As Farmer</a></li>
-                                <li><a href="RenterRegistration.html">As Renter</a></li>
+                                <li><a href="FarmerRegistration">As Farmer</a></li>
+                                <li><a href="RenterRegistration">As Renter</a></li>
                             </ul>
                         </li>
-                        <li><a href="Aboutus.html">About Us</a></li> 
-                        <li><a href="feedback.html" class="active">Feedback</a></li> 
-                        <li><a href="contact.html">ContactUs</a></li>
+                        <li><a href="Aboutus">About Us</a></li> 
+                        <li><a href="feedback" class="active">Feedback</a></li> 
+                        <li><a href="contact">ContactUs</a></li>
                     </ul>        
                     <a class='menu-trigger'>
                         <span>Menu</span>

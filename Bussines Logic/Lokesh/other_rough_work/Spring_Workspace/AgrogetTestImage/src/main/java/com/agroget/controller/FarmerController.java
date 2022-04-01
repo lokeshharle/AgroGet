@@ -32,25 +32,21 @@ public class FarmerController {
 	@Autowired
 	FarmerDao farmerDao;
 	
-	@GetMapping("/index")
-	public String index() {
-		return "index";
-	}
-
+	
 	@GetMapping("/home")
 	public String home() {
 		return "farmer";
 	}
 
-	@GetMapping("/login")
-	public String login() {
-		return "Login";
-	}
-
-	@GetMapping("/home/login1")
-	public String login1() {
-		return "login1";
-	}
+	/*
+	 * @GetMapping("/index") public String index() { return "index"; }
+	 */
+	
+	
+	
+	/*
+	 * @GetMapping("/home/login1") public String login1() { return "login1"; }
+	 */
 
 	@PostMapping("/addFarmer")
 	public String addFarmer(@RequestParam String fname, @RequestParam String lname,
@@ -83,6 +79,11 @@ public class FarmerController {
 			
 			return "farmer";
 	}
+	
+	
+	//purn farmer register 
+	
+	
 
 	/*
 	 * @PostMapping("/home/loginFarmer") public ModelAndView
@@ -112,14 +113,15 @@ public class FarmerController {
 	 * return mv; }
 	 */
 
+	
 	/*
 	 * @GetMapping("/orderEquipment") public void orderEquipment(@RequestParam int
 	 * id) { System.out.println("userid" + id); FarmerEntity farmerEntity =
 	 * farmerDao.loginFarmer("prash@gmail.com", "prash"); OrderInfoTable oi = new
 	 * OrderInfoTable(new Date(), (byte) 1, 8888, farmerEntity);
 	 * orderInfoDao.saveOI(oi); System.out.println(oi.getOrderId()); }
+	 * 
 	 */
-
 	
 	/*
 	 * @GetMapping("/search") public ModelAndView searchEquipment() { ModelAndView

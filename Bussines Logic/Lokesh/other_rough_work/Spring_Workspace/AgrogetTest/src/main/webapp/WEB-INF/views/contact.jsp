@@ -37,34 +37,35 @@ https://templatemo.com/tm-569-edu-meeting
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                      <img src="assets/images/logo.png" class="img">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="Login.html">Login</a></li>
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="index" class="logo">
+                        <img src="assets/images/logo.png" class="img">
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                        <li class="scroll-to-section"><a href="index" class="active">Home</a></li>
+                       <li><a href="Login">Login</a></li>
+                        
                         <li class="has-sub">
-                            <a href="javascript:void(0)">Registration</a>
+                            <a href="javascript:void(0)">Registration</a> 
                             <ul class="sub-menu">
-                                <li><a href="FarmerRegistration.html">As Farmer</a></li>
-                                <li><a href="RenterRegistration.html">As Renter</a></li>
+                                <li><a href="FarmerRegistration">As Farmer</a></li>
+                                <li><a href="RenterRegistration">As Renter</a></li>
                             </ul>
                         </li>
-                        <li><a href="Aboutus.html">About Us</a></li> 
-                        <li><a href="feedback.html">Feedback</a></li> 
-                        <li><a href="contact.html" class="active">ContactUs</a></li>
-                    </ul>        
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
+                        <li ><a href="Aboutus">About Us</a></li>
+                        <li><a href="feedback">Feedback</a></li> 
+                        <li><a href="contact">ContactUs</a></li>
+                    </ul>         
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
                 </nav>
             </div>
         </div>

@@ -273,6 +273,26 @@ body {
   color: #fff;
 }
 
+/* btn login*/
+.log {
+  margin-bottom: 5px;
+}
+/* verify button*/
+.verify
+{
+background-color: burlywood !important;
+width: 94px !important;
+padding-left: 25px !important;
+}
+
+/* forgot pass button*/
+.pass
+{
+background-color: burlywood !important;
+width: 150px !important;
+padding-left: 39px !important;
+}
+
 
 
 /*Start of toggle css*/
@@ -716,7 +736,7 @@ header
 }
 
 .header-area.header-sticky {
-  min-height: 80px;
+  min-height: 89px;
 }
 
 .header-area .nav {
