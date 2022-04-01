@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="order_equipment_tbl")
 public class OrderEquipmentTable {
@@ -21,6 +23,7 @@ public class OrderEquipmentTable {
 	@Column(name="order_equipment_id")
 	private int orderEquipmetId;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	@Column(name="from_date")
 	private Date fromDate;
@@ -30,23 +33,23 @@ public class OrderEquipmentTable {
 	private Date toDate;
 	
 	@Column(name="from_time")
-	private Time fromTime;
+	private int fromTime;
 	
 	@Column(name="to_time")
-	private Time toTime;
+	private int toTime;
 	
-	@Column(name="order_equipment_status",columnDefinition = "TINYINT",nullable = false)
-	private byte orderEquipmentStatus;
+	@Column(name="order_equipment_status")
+	private int orderEquipmentStatus;
 
-	@Column(name="service_address",length = 100,nullable = false)
+	@Column(name="service_address",length = 100)
 	private String serviceAddress;
 	
 	@ManyToOne
-	@JoinColumn(name="equipment_id",nullable = false)
+	@JoinColumn(name="equipment_id")
 	private EquipmentInfoTable equipmentInfoTbl;
 
 	@ManyToOne
-	@JoinColumn(name="order_id",nullable = false)
+	@JoinColumn(name="order_id")
 	private OrderInfoTable orderInfoTbl;
 
 	public OrderEquipmentTable() {
@@ -77,23 +80,23 @@ public class OrderEquipmentTable {
 		this.toDate = toDate;
 	}
 
-	public Time getFromTime() {
+	public int getFromTime() {
 		return fromTime;
 	}
 
-	public void setFromTime(Time fromTime) {
+	public void setFromTime(int fromTime) {
 		this.fromTime = fromTime;
 	}
 
-	public Time getToTime() {
+	public int getToTime() {
 		return toTime;
 	}
 
-	public void setToTime(Time toTime) {
+	public void setToTime(int toTime) {
 		this.toTime = toTime;
 	}
 
-	public byte getOrderEquipmentStatus() {
+	public int getOrderEquipmentStatus() {
 		return orderEquipmentStatus;
 	}
 
@@ -125,7 +128,7 @@ public class OrderEquipmentTable {
 		this.orderInfoTbl = orderInfoTbl;
 	}
 
-	public OrderEquipmentTable(int orderEquipmetId, Date fromDate, Date toDate, Time fromTime, Time toTime,
+	public OrderEquipmentTable(int orderEquipmetId, Date fromDate, Date toDate, int fromTime, int toTime,
 			byte orderEquipmentStatus, String serviceAddress, EquipmentInfoTable equipmentInfoTbl,
 			OrderInfoTable orderInfoTbl) {
 		super();

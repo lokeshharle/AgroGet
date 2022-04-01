@@ -28,7 +28,7 @@ public class OrderInfoTable {
 	private Date orderDate;
 
 	@Column(name="order_status",columnDefinition = "TINYINT")
-	private byte orderStatus;
+	private int orderStatus;
 
 	@Column(name="order_total_cost")
 	private double orderTotalCost;
@@ -62,7 +62,7 @@ public class OrderInfoTable {
 		this.orderDate = orderDate;
 	}
 
-	public byte getOrderStatus() {
+	public int getOrderStatus() {
 		return orderStatus;
 	}
 
@@ -102,8 +102,11 @@ public class OrderInfoTable {
 		this.farmerInfoTbl = farmerEntity;
 		
 	}
-
-
+	
+	public OrderInfoTable(FarmerEntity farmerInfoTbl) {
+		super();
+		this.farmerInfoTbl = farmerInfoTbl;
+	}
 
 	@Override
 	public String toString() {
@@ -111,8 +114,5 @@ public class OrderInfoTable {
 				+ ", orderTotalCost=" + orderTotalCost + ", farmerInfoTbl=" + farmerInfoTbl + ", orderEquipmentTbls="
 				+ orderEquipmentTbls + "]";
 	}
-
-	
-	
 	
 }

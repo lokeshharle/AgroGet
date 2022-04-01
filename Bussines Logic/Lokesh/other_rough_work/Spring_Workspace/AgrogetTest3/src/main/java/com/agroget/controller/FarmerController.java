@@ -3,6 +3,13 @@ package com.agroget.controller;
 import java.io.IOException;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -13,6 +20,7 @@ import javax.sql.rowset.serial.SerialBlob;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -368,7 +376,7 @@ public class FarmerController {
 	
 	
 	
-	
+	//----- show all equipment ---->
 	@GetMapping("/home/showAllEquipments")
 	public ModelAndView showAllEquipments()
 	{
@@ -379,16 +387,52 @@ public class FarmerController {
 		return mv;
 	}
 	
-	@GetMapping("/orderEquipment/{id}")
-	public void orderEquipment(@PathVariable int id )
+	//<----
+	
+	// ----> testing ordering equipment 
+	// coming here from showsearch
+	
+	@GetMapping("/orderEquipment")
+	public ModelAndView orderEquipment(@RequestParam int equipmentid )
 	{
-		System.out.println("successfull!!!");
-		OrderEquipmentTable oe =  orderEquipmentDao.getById(id);
-		orderEquipmentDao.saveOrderEquipment(oe);
-		System.out.println("22222successfull!!!");
+		System.out.println("inside order equipment");
+		ModelAndView mv = new ModelAndView();
+		EquipmentInfoTable equipment = equipmentDao.findByEquipmentId(equipmentid);
+		mv.addObject("equipment", equipment);
+		mv.setViewName("gveorder");
+		return mv;
+	}
 		
+	@PostMapping("cnfrmord")
+	public String cnford(@RequestParam int equipmentid,@RequestParam int farmerid,
+			@RequestParam String fromdate,@RequestParam String todate,
+			@RequestParam String fromtime,@RequestParam String totime,
+			@RequestParam String address) throws ParseException 
+	{
+		//-------------------\\
+		System.out.println("inside conform order");
+		System.out.println(fromdate);
+		System.out.println(fromtime);
+		
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date date1 = dateFormat.parse(fromdate);
+		System.out.println("this is date "+date1);
+		// changing time as integer in the database instead of time
+
+		int ftime=Integer.parseInt(fromtime);
+		int ttime=Integer.parseInt(totime);
+		//-------------------\\
+		
+		
+		
+		
+		
+		return "test";
 	}
 	
+	//<-------
+	
+	//-----> my account testing --->
 	@PostMapping("/profile")
 	public ModelAndView farmerProfile(@RequestParam int farmerid)
 	{
@@ -409,7 +453,38 @@ public class FarmerController {
 	
 	
 	 */
-	
-	
-
+	//<-------
 }
+/*  
+ 		System.out.println("Passed :" + date);
+		CustomerInfoTbl cust = customerDao.findById(custid);
+		ServiceInfoTbl service = serviceDao.findById(serviceid);
+
+		BookingInfoTbl defaults = new BookingInfoTbl();
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+		Date date1 = dateFormat.parse(date);
+		BookingInfoTbl book = new BookingInfoTbl(new Date(), service.getService_Cost(),date1,defaults.getBooking_Status(), null, null,0, cust, service);
+		bookingDao.saveBooking(book);
+ 
+ 		List<ServiceInfoTbl> services = (List<ServiceInfoTbl>) request.getAttribute("services");
+	for(ServiceInfoTbl service : services )
+	{
+		%>
+			<%= service.getService_Name() %>
+			<%= service.getService_Cost() %>
+			Booking Date : <input type="datetime-local" name="todate" id=todate value=""  required/>
+			
+			<a href = "javascript:;" onclick = "this.href='bookService?serviceid=<%=service.getService_Id()%>&custid=${customer.getCustomer_id()}&date='+ document.getElementById('todate').value">Book</a>
+		
+			<a href="feedback">Give Feedback</a>
+		
+		<%
+	}
+ 	
+ 
+ 
+ 
+ 
+ */
+
+

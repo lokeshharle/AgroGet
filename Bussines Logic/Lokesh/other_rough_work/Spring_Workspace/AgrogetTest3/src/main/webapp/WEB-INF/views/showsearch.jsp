@@ -26,7 +26,7 @@
 		%>
 			<%= equipment.getEquipment_name() %>
 			<%= equipment.getEquipment_rate() %>
-			<a href="/orderEquipment?id=<%=equipment.getEquipment_id()%>"> Order Equipment</a>
+			<a href="/orderEquipment?equipmentid=<%=equipment.getEquipment_id()%>"> Order Equipment</a>
 			</br>
 		<%
 	}
