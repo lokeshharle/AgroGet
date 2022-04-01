@@ -1,9 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
+<html>
+<head>
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Template Mo">
@@ -34,39 +34,39 @@ https://templatemo.com/tm-569-edu-meeting
    
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
-      <div class="container">
-          <div class="row">
-              <div class="col-12">
-                  <nav class="main-nav">
-                      <!-- ***** Logo Start ***** -->
-                      <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" class="img">
-                      </a>
-                      <!-- ***** Logo End ***** -->
-                      <!-- ***** Menu Start ***** -->
-                      <ul class="nav">
-                          <li><a href="index.html">Home</a></li>
-                          <li><a href="FarmerRegistration.html" >Login</a></li>
-                          <li class="has-sub">
-                              <a href="javascript:void(0)">Registration</a>
-                              <ul class="sub-menu">
-                                  <li><a href="FarmerRegistration.html">As Farmer</a></li>
-                                  <li><a href="RenterRegistration.html" class="active">As Renter</a></li>
-                              </ul>
-                          </li>
-                          <li><a href="Aboutus.html">About Us</a></li> 
-                          <li><a href="feedback.html">Feedback</a></li> 
-                          <li><a href="contact.html">Contact Us</a></li> 
-                      </ul>        
-                      <a class='menu-trigger'>
-                          <span>Menu</span>
-                      </a>
-                      <!-- ***** Menu End ***** -->
-                  </nav>
-              </div>
-          </div>
-      </div>
-  </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                      <img src="assets/images/logo.png" class="img">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="index">Home</a></li>
+                        <li><a href="Login" class="active">Login</a></li>
+                        <li class="has-sub">
+                            <a href="javascript:void(0)">Registration</a>
+                            <ul class="sub-menu">
+                                <li><a href="farmer">As Farmer</a></li>
+                                <li><a href="renter">As Renter</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="aboutus">About Us</a></li> 
+                        <li><a href="feedback">Feedback</a></li> 
+                        <li><a href="contact">ContactUs</a></li>
+                    </ul>        
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
   <!-- ***** Header Area End ***** -->
 
 
@@ -75,82 +75,69 @@ https://templatemo.com/tm-569-edu-meeting
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h2>Renter Registration</h2>
-
+          <h2> Login</h2>
          
         </div>
       </div>
     </div>
   </section>
 
-
   <section class="contact-us" id="contact">
     <div class="container">
       <div class="row">
-        <div class="col-lg-9 align-self-center">
+        <div class="col-lg-6 align-self-center">
           <div class="row">
             <div class="col-lg-12 setborder">
-              <form id="contact" action="" method="post" >
+              <form id="contact" action="loginFarmer" method="post">
                 <div class="row">
-                  <div class="col-lg-12 ">
-                    <h2>Enter Your Details</h2>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="FirstName" type="text" id="fname" placeholder="FirstName" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="LastName" type="text" id="lname" placeholder="LastName" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                    <input name="Email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Email" required="">
-                  </fieldset>
-                  </div>
-                 
-                  
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="Password" type="password" id="password" placeholder="Password" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="Phone" type="number" id="name" placeholder="Phone" required="">
-                    </fieldset>
-                  </div>
-                 
-                
-                 
-                  
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="ShopDetails" type="text" id="shop" placeholder="Shop Detail" required="">
-                    </fieldset>
-                  </div>
-                  
 
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <input name="Address" type="text" id="address" placeholder="Address" required="">
-                    </fieldset>
+                   <!-- <div class="col-lg-6 ">
+                    <h2>Enter Your Details</h2>
+                  </div> -->
+                  <!--toggle switch-->
+                  <div class="switch">
+                   
+                    <div class="switch-button" >
+                      <input class="switch-button-checkbox" type="checkbox" name="toggle"></input>    <!--toggle switch   name=toggle-->     
+                      <label class="switch-button-label" for=""><span class="switch-button-label-span">Farmer</span></label>
+                    </div>
                   </div>
+                <!--toggle switch-->
+                
+                  <div>
+                    <hr>
+                  </div>
+                
+
+                  <!-- <div class="col-lg-12 ">
+                    <h2>Enter Your Details</h2>
+                  </div> -->
                  
                 
-                  <div class="col-lg-4">
-                    <fieldset class="height"><label for="files" class="btn">Upload Shop acts</label>
-                      <input id="files" style="visibility:hidden;" type="file" accept="image/png">
+                  <div class="col-lg-12">
+                    
+                    
+                    <fieldset>
+                      <input type="text" id="username" placeholder="Username" name="username" required="">
                     </fieldset>
                   </div>
+                  
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <input type="text" id="password" placeholder="Password" name="password"required="">
+                    </fieldset>
+                  </div>
+                
                 
                   <div class="col-lg-12">
                     <fieldset>
-                      <button type="submit" id="form-submit" class="button">Register</button>
+                      <button type="submit" id="form-submit" class="button log">Login</button>
                     </fieldset>
                   </div>
+                  <br>
+                 <hr>
+                    <a href="forgotpassword.html" ><h6 style="margin-left: 207px; color: brown;">Forgot Password?</h6></a>
+                                 
                 </div>
               </form>
             </div>
@@ -159,7 +146,7 @@ https://templatemo.com/tm-569-edu-meeting
 
   <section class="meetings-page" id="meetings">
     <div class="footer">
-      <p>Copyright Â© 2022 AgroGet Co., Ltd. All Rights Reserved. 
+      <p>Copyright © 2022 AgroGet Co., Ltd. All Rights Reserved. 
           <br>Design: <a href="https://templatemo.com/page/1" target="_parent" title="website templates">AgroGet</a></p>
     </div>
   </section>

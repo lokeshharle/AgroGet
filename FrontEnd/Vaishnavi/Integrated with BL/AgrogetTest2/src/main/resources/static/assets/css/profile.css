@@ -8,7 +8,13 @@
 }
 
 body{
-    background-image: url(../../assets/images/1659982.jpg);
+    background-image: url(../../assets/images/back.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 140px;
+    padding-bottom: 0px;
 }
 /*For Edit Profile*/
 section.contact-us1 #contact {
@@ -126,7 +132,10 @@ section.contact-us1 {
 
   /*For Edit Profile*/
 
-
+.mar
+{
+	margin-left:-300px
+}
 
 
   
