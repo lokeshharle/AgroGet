@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import com.agroget.entity.OrderInfoTable;
@@ -16,10 +17,7 @@ public class OrderInfoDao {
 	OrderInfoRepository orderInfoRepo;
 	
 	public void saveOI(OrderInfoTable oi) {
-		
-		OrderInfoTable s =  orderInfoRepo.save(oi);
-		System.out.println(s.getOrderId());
-		
+		orderInfoRepo.save(oi);
 	}
 	
 	public OrderInfoTable findById(int id)
@@ -32,6 +30,17 @@ public class OrderInfoDao {
 	public List<OrderInfoTable> findByFarmerId(int farmerId)
 	{
 		return orderInfoRepo.findByFarmerId(farmerId);
+	}
+	
+	public OrderInfoTable findByFarmerIdCostStatus(int farmerId)
+	{
+		List<OrderInfoTable> oiList = orderInfoRepo.findByFarmerIdCostStatus(farmerId,0,0);
+		return oiList.get(0);
+	}
+	
+	public void updateOI( int orderId, int farmerId,int ordercost, int orderstatus)
+	{
+		orderInfoRepo.updateOI(orderId, farmerId, ordercost, 1);
 	}
 
 }

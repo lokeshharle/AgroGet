@@ -32,4 +32,9 @@ public class OrderEquipmentDao {
 		return orderEquipmentRepo.findByOrderId(id);
 	}
 
+	public OrderEquipmentTable findByOrderEquipment(int orderId, int equipment_id) {
+		
+		return orderEquipmentRepo.findByOrderIdEqId(orderId,equipment_id);
+	}
+
 }

@@ -24,8 +24,8 @@
 			<tr>
 			<td><%= orderInfo.getOrderId()%></td>
 			<td><%= orderInfo.getOrderTotalCost()%></td>
-			<td><%= orderInfo.getOrderDate()%></td>
-			</tr>
+			<%-- <td><%= orderInfo.getOrderDate()%></td>
+ --%>			</tr>
 			</br>
 		<%
 	}

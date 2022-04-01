@@ -32,10 +32,10 @@
    <input type="date" id="todate" name="todate" ><br>
   
    <label for="fromtime">From Time :</label><br>
-	<input type="time" id="fromtime" name="fromtime"><br>
+	<input type="number" min="1" max="24" id="fromtime" name="fromtime"><br>
   
    <label for="totime">To Time :</label><br>
-   <input type="time" id="totime" name="totime" ><br>
+   <input type="number" min="1" max="24" id="totime" name="totime" ><br>
    
    <label for="address">Service Address :</label><br>
    <input type="text" id="address" name="address" ><br>

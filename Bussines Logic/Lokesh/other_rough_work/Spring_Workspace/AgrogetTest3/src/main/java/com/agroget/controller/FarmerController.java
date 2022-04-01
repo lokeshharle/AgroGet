@@ -18,6 +18,7 @@ import javax.servlet.http.HttpSession;
 import javax.sql.rowset.serial.SerialBlob;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.relational.core.sql.IsNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -38,7 +39,9 @@ import com.agroget.entity.EquipmentInfoTable;
 import com.agroget.entity.FarmerEntity;
 import com.agroget.entity.OrderEquipmentTable;
 import com.agroget.entity.OrderInfoTable;
+import com.iet.sender.EmailSender;
 
+//dqccbgkyaoakufmu
 
 @Controller
 @SessionAttributes("farmer")
@@ -138,9 +141,46 @@ public class FarmerController {
 		return mv;
 	}
 	
+	//---> testing forgot password ---->
+	@GetMapping("/forgotpassword")
+	public String forgotpassword() {
+		
+		return "sendmail";
+	}
+	
+	@PostMapping("/sendmail")
+	public String sendmail(@RequestParam String email) {
+		
+		try {
+			EmailSender mail = new EmailSender("agrogetdemo@gmail.com","dqccbgkyaoakufmu");
+			mail.sendEmail(email, "http://localhost:9090/resetpassword","Use this link to login/change password by Agroget");
+		} 
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "log";
+	}
+	
+	@GetMapping("/resetpassword")
+	public String resetpassword() {
+			
+			return "resetpassword";
+	}
 	
 	
+	@PostMapping("/resetpassword2")
+	public ModelAndView resetpassword2(@RequestParam String username, @RequestParam String password) {
+			ModelAndView mv = null;
+			FarmerEntity farmer = farmerDao.directLogin(username);
+			farmer.setFarmerPassword(password);
+			farmerDao.updateFarmer(farmer); 
+			mv.addObject("farmer", farmer);
+			mv.setViewName("login");
+			return mv;
+	}
+	//<-------
 	
+	/// dont use addfarmer use addfarmer1 for adding farmer
 	@PostMapping("/addFarmer")
 	public String addFarmer(@RequestParam String fname, @RequestParam String lname , 
 			@RequestParam String mobile,  @RequestParam String email
@@ -174,7 +214,8 @@ public class FarmerController {
 			  ,  @RequestParam String pincode,@RequestParam("file") MultipartFile file) {
 		String username =  email;
 		FarmerEntity farmerEntity = new FarmerEntity(fname, lname, mobile, email, username, password, address, pincode);
-		farmerDao.addFarmerDetails(farmerEntity);
+		farmerDao.addFarmerDetails(farmerEntity);// save kela
+		
 		FarmerEntity farmer = farmerDao.loginFarmer(username, password);
 		System.out.println(farmer.getFarmerId() + farmer.getFarmerFname());
 		
@@ -216,6 +257,10 @@ public class FarmerController {
 		return "log";
 	}
 	
+	// akashj@gmail.com      
+	// akash@45Sum
+	
+	
 	@PostMapping("/logn")
 	public ModelAndView logn(@RequestParam String username, @RequestParam String password,
 			@RequestParam(required=false,name="toggle") String []toggle,
@@ -230,6 +275,10 @@ public class FarmerController {
 			FarmerEntity farmer = farmerDao.loginFarmer(username, password);
 			
 			HttpSession session2 = request.getSession();
+			
+			//FarmerEntity far =(FarmerEntity) session2.getAttribute("farmer");
+			
+			//System.out.println(far.getFarmerFname());
 					
 			if (Objects.isNull(farmer)) {
 				mv.setViewName("login");
@@ -252,7 +301,7 @@ public class FarmerController {
 	}
 	
 	@GetMapping("/srch")
-	public ModelAndView srch(@RequestParam int farmerid)
+	public ModelAndView srch(@RequestParam int farmerid,HttpServletRequest request)
 	{
 		ModelAndView mv = new ModelAndView();
 		FarmerEntity farmer = farmerDao.findById(farmerid);
@@ -404,7 +453,7 @@ public class FarmerController {
 	}
 		
 	@PostMapping("cnfrmord")
-	public String cnford(@RequestParam int equipmentid,@RequestParam int farmerid,
+	public ModelAndView cnford(@RequestParam int equipmentid,@RequestParam int farmerid,
 			@RequestParam String fromdate,@RequestParam String todate,
 			@RequestParam String fromtime,@RequestParam String totime,
 			@RequestParam String address) throws ParseException 
@@ -414,20 +463,65 @@ public class FarmerController {
 		System.out.println(fromdate);
 		System.out.println(fromtime);
 		
+		
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date date1 = dateFormat.parse(fromdate);
+		Date date2 = dateFormat.parse(todate);
 		System.out.println("this is date "+date1);
 		// changing time as integer in the database instead of time
 
-		int ftime=Integer.parseInt(fromtime);
-		int ttime=Integer.parseInt(totime);
+//		float ftime = Float.parseFloat(fromtime);
+		
+		//int ttime=Integer.parseInt(totime);
 		//-------------------\\
 		
 		
 		
+		System.out.println(farmerid);
+		
+		FarmerEntity farmer = farmerDao.findById(farmerid);
 		
 		
-		return "test";
+		
+		EquipmentInfoTable equipment = equipmentDao.findByEquipmentId(equipmentid);
+		
+		OrderInfoTable oi = new OrderInfoTable(farmer);
+		
+		orderInfoDao.saveOI(oi);
+		
+		OrderInfoTable oifc = orderInfoDao.findByFarmerIdCostStatus(farmerid);
+		
+//		System.out.println(oifc.getOrderDate());
+		System.out.println(oifc.getOrderId());
+		
+		OrderEquipmentTable oet = new OrderEquipmentTable(date1, date2, equipmentid, farmerid, address, equipment, oifc);
+		
+		orderEquipmentDao.saveOrderEquipment(oet);
+		
+		OrderEquipmentTable ordEq = orderEquipmentDao.findByOrderEquipment(oifc.getOrderId(),equipment.getEquipment_id());
+		
+		
+		oifc.setOrderTotalCost(equipment.getEquipment_rate());
+		
+		oifc.setOrderStatus(equipment.getEquipment_status());
+		
+		orderInfoDao.saveOI(oifc);
+		
+		
+		orderInfoDao.updateOI(oifc.getOrderId(),farmer.getFarmerId(),(int) oifc.getOrderTotalCost(),1);
+		
+		System.out.println("after update");
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.addObject("orderInfo",oifc);
+		
+		mv.setViewName("test");
+		
+		return mv;
+		
+		
+		//going to bill
 	}
 	
 	//<-------

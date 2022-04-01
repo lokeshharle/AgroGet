@@ -13,15 +13,18 @@
  
   
   <label for="username">UserName :</label><br>
-  <input type="text" id="username" name="username" ><br>
+  <input type="text" id="username" name="username" value="akashj@gmail.com"><br>
   
   <label for="password">Password :</label><br>
-  <input type="text" id="password" name="password" ><br>
+  <input type="text" id="password" name="password" value="akash@45Sum"><br>
   
   
   
   <input type="submit" value="Submit">
-</form> 
+  
+ 
+</form> <br/>
+ <a href="forgotpassword">Forgot password</a>
 
 </body>
 </html>

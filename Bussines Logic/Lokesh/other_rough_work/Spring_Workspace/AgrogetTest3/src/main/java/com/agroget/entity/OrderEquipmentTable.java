@@ -52,9 +52,7 @@ public class OrderEquipmentTable {
 	@JoinColumn(name="order_id")
 	private OrderInfoTable orderInfoTbl;
 
-	public OrderEquipmentTable() {
-		super();
-	}
+	
 
 	public int getOrderEquipmetId() {
 		return orderEquipmetId;
@@ -128,16 +126,31 @@ public class OrderEquipmentTable {
 		this.orderInfoTbl = orderInfoTbl;
 	}
 
-	public OrderEquipmentTable(int orderEquipmetId, Date fromDate, Date toDate, int fromTime, int toTime,
-			byte orderEquipmentStatus, String serviceAddress, EquipmentInfoTable equipmentInfoTbl,
-			OrderInfoTable orderInfoTbl) {
+	public OrderEquipmentTable() {
 		super();
-		this.orderEquipmetId = orderEquipmetId;
+	}
+	
+	public OrderEquipmentTable(Date fromDate, Date toDate, int fromTime, int toTime, int orderEquipmentStatus,
+			String serviceAddress, EquipmentInfoTable equipmentInfoTbl, OrderInfoTable orderInfoTbl) {
+		super();
 		this.fromDate = fromDate;
 		this.toDate = toDate;
 		this.fromTime = fromTime;
 		this.toTime = toTime;
 		this.orderEquipmentStatus = orderEquipmentStatus;
+		this.serviceAddress = serviceAddress;
+		this.equipmentInfoTbl = equipmentInfoTbl;
+		this.orderInfoTbl = orderInfoTbl;
+	}
+	
+	public OrderEquipmentTable(Date fromDate, Date toDate, int fromTime, int toTime,
+			String serviceAddress, EquipmentInfoTable equipmentInfoTbl, OrderInfoTable orderInfoTbl) {
+		super();
+		this.fromDate = fromDate;
+		this.toDate = toDate;
+		this.fromTime = fromTime;
+		this.toTime = toTime;
+		this.orderEquipmentStatus = 1;
 		this.serviceAddress = serviceAddress;
 		this.equipmentInfoTbl = equipmentInfoTbl;
 		this.orderInfoTbl = orderInfoTbl;

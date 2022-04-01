@@ -23,11 +23,11 @@ public class OrderInfoTable {
 	@Column(name="order_id")
 	private int orderId;
 	
-	@Temporal(TemporalType.DATE)
-	@Column(name="order_date",nullable = true)
-	private Date orderDate;
+//	@Temporal(TemporalType.DATE)
+//	@Column(name="order_date")
+//	private Date orderDate;
 
-	@Column(name="order_status",columnDefinition = "TINYINT")
+	@Column(name="order_status")
 	private int orderStatus;
 
 	@Column(name="order_total_cost")
@@ -54,19 +54,19 @@ public class OrderInfoTable {
 		this.orderId = orderId;
 	}
 
-	public Date getOrderDate() {
-		return orderDate;
-	}
-
-	public void setOrderDate(Date orderDate) {
-		this.orderDate = orderDate;
-	}
+//	public Date getOrderDate() {
+//		return orderDate;
+//	}
+//
+//	public void setOrderDate(Date orderDate) {
+//		this.orderDate = orderDate;
+//	}
 
 	public int getOrderStatus() {
 		return orderStatus;
 	}
 
-	public void setOrderStatus(byte orderStatus) {
+	public void setOrderStatus(int orderStatus) {
 		this.orderStatus = orderStatus;
 	}
 
@@ -95,22 +95,37 @@ public class OrderInfoTable {
 	}
 
 
-	public OrderInfoTable(Date orderDate, byte orderStatus, double orderTotalCost,FarmerEntity farmerEntity) {
-		this.orderDate = orderDate;
-		this.orderStatus = orderStatus;
-		this.orderTotalCost = orderTotalCost;
-		this.farmerInfoTbl = farmerEntity;
-		
-	}
+//	public OrderInfoTable(Date orderDate, byte orderStatus, double orderTotalCost,FarmerEntity farmerEntity) {
+//		this.orderDate = orderDate;
+//		this.orderStatus = orderStatus;
+//		this.orderTotalCost = orderTotalCost;
+//		this.farmerInfoTbl = farmerEntity;
+//		
+//	}
+	
+//	public OrderInfoTable(Date orderDate, byte orderStatus, double orderTotalCost,FarmerEntity farmerEntity) {
+//		
+//		this.orderStatus = orderStatus;
+//		this.orderTotalCost = orderTotalCost;
+//		this.farmerInfoTbl = farmerEntity;
+//		
+//	}
 	
 	public OrderInfoTable(FarmerEntity farmerInfoTbl) {
 		super();
 		this.farmerInfoTbl = farmerInfoTbl;
 	}
 
+//	@Override
+//	public String toString() {
+//		return "OrderInfoTable [orderId=" + orderId + ", orderDate=" + orderDate + ", orderStatus=" + orderStatus
+//				+ ", orderTotalCost=" + orderTotalCost + ", farmerInfoTbl=" + farmerInfoTbl + ", orderEquipmentTbls="
+//				+ orderEquipmentTbls + "]";
+//	}
+	
 	@Override
 	public String toString() {
-		return "OrderInfoTable [orderId=" + orderId + ", orderDate=" + orderDate + ", orderStatus=" + orderStatus
+		return "OrderInfoTable [orderId=" + orderId + ", orderDate="  + ", orderStatus=" + orderStatus
 				+ ", orderTotalCost=" + orderTotalCost + ", farmerInfoTbl=" + farmerInfoTbl + ", orderEquipmentTbls="
 				+ orderEquipmentTbls + "]";
 	}

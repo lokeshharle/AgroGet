@@ -2,6 +2,9 @@ package com.agroget.rerpository;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
+import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -12,6 +15,17 @@ public interface OrderInfoRepository extends JpaRepository<OrderInfoTable, Integ
 	@Query(value= "SELECT * FROM order_info_tbl e WHERE e.farmer_id=:farmerId",nativeQuery=true)
 	public List<OrderInfoTable> findByFarmerId(@Param("farmerId") int farmerId);
 	
+	//---------------------
+	// search by farmer id and where status AND cost is zero 0 
 	
+	@Query(value= "SELECT * FROM order_info_tbl e WHERE e.farmer_id=:farmerId AND e.order_total_cost=:tc AND e.order_status=:st",nativeQuery=true)
+	public List<OrderInfoTable> findByFarmerIdCostStatus(@Param("farmerId") int farmerId,int tc, int st);
+	// handle exception if no value is present
+	
+	
+	@Modifying
+	@Transactional
+	@Query(value="Update order_info_tbl e set e.order_total_cost=:ordercost, e.order_status=:orderstatus where e.order_id=:orderId AND e.farmer_id=:farmerId",nativeQuery=true)
+	public int updateOI(@Param("orderId") int orderId,@Param("farmerId") int farmerId, @Param("ordercost") double d, @Param("orderstatus") int orderstatus);
 	
 }

@@ -28,6 +28,13 @@ public class FarmerDao {
 		return farmerEntity;
 		
 	}
+	
+	public FarmerEntity directLogin(String username)
+	{
+		FarmerEntity farmerEntity = farmerRepo.directLogin(username);
+		return farmerEntity;
+		
+	}
 
 	public FarmerEntity findById(int farmerid) {
 		Optional<FarmerEntity> op = farmerRepo.findById(farmerid);

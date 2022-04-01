@@ -13,6 +13,8 @@ public interface OrderEquipmentRepository extends JpaRepository<OrderEquipmentTa
 
 	@Query(value= "SELECT * FROM order_equipment_tbl e WHERE e.order_id=:orderId",nativeQuery=true)
 	public List<OrderEquipmentTable> findByOrderId(@Param("orderId") int orderId);
-
+	
+	@Query(value= "SELECT * FROM order_equipment_tbl e WHERE e.order_id=:orderId AND e.equipment_id=:equipmentId",nativeQuery=true)
+	public OrderEquipmentTable findByOrderIdEqId(@Param("orderId") int orderId,@Param("equipmentId") int eqId);
 	
 }
